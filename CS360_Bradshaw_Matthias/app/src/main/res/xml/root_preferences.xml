@@ -1,0 +1,24 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <SwitchPreferenceCompat
+        app:key="dark_theme"
+        app:title="@string/pref_title_theme" />
+
+    <PreferenceCategory app:title="Communication">
+
+        <SwitchPreferenceCompat
+            app:key="sms_notifications_enabled"
+            app:title="SMS Notifications"
+            app:summary="Receive SMS alerts for inventory updates"
+            android:defaultValue="false" />
+
+        <Preference
+            app:key="test_sms"
+            app:title="Test SMS Notification"
+            app:summary="Send a test message to verify settings"
+            app:dependency="sms_notifications_enabled" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

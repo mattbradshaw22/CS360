@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.zybooks.cs360_bradshaw_matthias.ui.login.LoginFragment"
+        android:label="INVENtracker login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_mainPageFragment"
+            app:destination="@id/mainPageFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/smsFragment"
+        android:name="com.zybooks.cs360_bradshaw_matthias.SmsFragment"
+        android:label="SMS Settings"
+        tools:layout="@layout/fragment_sms" >
+        <action
+            android:id="@+id/action_smsFragment_to_mainPageFragment"
+            app:destination="@id/mainPageFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/mainPageFragment"
+        android:name="com.zybooks.cs360_bradshaw_matthias.MainPageFragment"
+        android:label="Main Page"
+        tools:layout="@layout/fragment_main_page" />
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.zybooks.cs360_bradshaw_matthias.SettingsFragment"
+        android:label="Settings" >
+        <action
+            android:id="@+id/action_settingsFragment_to_smsFragment"
+            app:destination="@id/smsFragment" />
+    </fragment>
+</navigation>
